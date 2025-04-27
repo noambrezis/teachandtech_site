@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר - Teach & Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 6rem;
+        }
+
+        .contact-section {
+            padding: 4rem 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .contact-description {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+
+        .form-message {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .contact-section {
+                margin: 1rem;
+                padding: 2rem 1rem;
+            }
+
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="Pictures/TreeOnly.png" alt="Teach & Tech Logo">
+                    Teach & Tech
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">דף הבית</a>
+                    <a href="about.html">אודות</a>
+                    <a href="mentors.html">מנטורים</a>
+                    <a href="faq.html">שאלות נפוצות</a>
+                    <a href="contact.html">צור קשר</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="contact-section">
+                <h2>צור קשר</h2>
+                <p class="contact-description">מלאו את הטופס ונחזור אליכם בהקדם</p>
+                <div id="form-message" class="form-message"></div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder="שם מלא">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder="אימייל">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" required placeholder="טלפון">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required placeholder="הודעה"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">שלחו הודעה</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Teach & Tech. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="mobile-menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                const submitButton = contactForm.querySelector('.submit-button');
+                submitButton.disabled = true;
+                submitButton.textContent = 'שולח...';
+
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Google Apps Script URL
+                const scriptUrl = 'https://script.google.com/macros/s/AKfycbyHuspr_2VfJCXIJqWYU_e7483YWZ53FlzNywwsZt8xK1F586nI0_BfgO1s9I3_BnYBAQ/exec';
+
+                // Send form data with CORS handling
+                fetch(scriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'text/plain'
+                    }
+                })
+                .then(() => {
+                    // Since we're using no-cors, we can't get the response
+                    formMessage.textContent = 'ההודעה נשלחה בהצלחה! נחזור אליכם בהקדם.';
+                    formMessage.className = 'form-message success';
+                    contactForm.reset();
+                })
+                .catch(error => {
+                    formMessage.textContent = 'אירעה שגיאה בשליחת הטופס. אנא נסו שוב מאוחר יותר.';
+                    formMessage.className = 'form-message error';
+                })
+                .finally(() => {
+                    formMessage.style.display = 'block';
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'שלחו הודעה';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

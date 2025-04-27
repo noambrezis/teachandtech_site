@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>בלוג - Teach & Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 6rem;
+        }
+
+        .blog-header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .blog-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .blog-meta i {
+            color: var(--secondary-color);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s;
+        }
+
+        .pagination a:hover,
+        .pagination a.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Teach & Tech</a>
+                <div class="nav-links">
+                    <a href="index.html">דף הבית</a>
+                    <a href="about.html">אודות</a>
+                    <a href="mentors.html">מנטורים</a>
+                    <a href="faq.html">שאלות נפוצות</a>
+                    <a href="blog.html">בלוג</a>
+                    <a href="contact.html">צור קשר</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-header">
+            <div class="container">
+                <h1>בלוג Teach & Tech</h1>
+                <p>מאמרים, חדשות ועדכונים מהעולם של חינוך וטכנולוגיה</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://source.unsplash.com/random/800x600/?education" alt="חינוך דיגיטלי">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-tag">חינוך דיגיטלי</span>
+                        <h2 class="blog-title">העתיד של החינוך: טכנולוגיות חדשות בכיתה</h2>
+                        <p class="blog-excerpt">כיצד טכנולוגיות חדשות משנות את פני החינוך ומאפשרות למידה מותאמת אישית לכל תלמיד...</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15 במרץ 2024</span>
+                            <span><i class="far fa-user"></i> ד"ר שרה כהן</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://source.unsplash.com/random/800x600/?technology" alt="טכנולוגיה בחינוך">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-tag">טכנולוגיה בחינוך</span>
+                        <h2 class="blog-title">כלים דיגיטליים להוראה מרחוק</h2>
+                        <p class="blog-excerpt">סקירה של הכלים הדיגיטליים המובילים להוראה מרחוק והטמעתם בכיתה...</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 10 במרץ 2024</span>
+                            <span><i class="far fa-user"></i> דוד לוי</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://source.unsplash.com/random/800x600/?innovation" alt="חדשנות בחינוך">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-tag">חדשנות בחינוך</span>
+                        <h2 class="blog-title">פדגוגיה חדשנית בעידן הדיגיטלי</h2>
+                        <p class="blog-excerpt">כיצד לשלב פדגוגיה חדשנית עם טכנולוגיה בכיתה של המאה ה-21...</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 5 במרץ 2024</span>
+                            <span><i class="far fa-user"></i> מיכל אברהם</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#"><i class="fas fa-chevron-left"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Teach & Tech. כל הזכויות שמורות.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="mobile-menu.js"></script>
+</body>
+</html> 

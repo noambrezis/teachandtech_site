@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שאלות נפוצות - Teach & Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 6rem;
+        }
+
+        .faq-section {
+            padding: 4rem 0;
+        }
+
+        .faq-section h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background-color: var(--light-bg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #e9ecef;
+        }
+
+        .faq-question h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer ul {
+            margin: 1rem 0;
+            padding-right: 1.5rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-section {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .contact-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="Pictures/TreeOnly.png" alt="Teach & Tech Logo">
+                    Teach & Tech
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">דף הבית</a>
+                    <a href="about.html">אודות</a>
+                    <a href="mentors.html">מנטורים</a>
+                    <a href="faq.html">שאלות נפוצות</a>
+                    <a href="contact.html">צור קשר</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="faq-section">
+            <div class="container">
+                <h1>שאלות נפוצות</h1>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>מהי תוכנית Teach & Tech?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Teach & Tech הוא ארגון ללא מטרות רווח המחבר בין אנשי חינוך לאנשי טכנולוגיה. אנו מאמינים כי שילוב שני העולמות הללו יכול להוביל למהפכה אמיתית במערכת החינוך.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>האם יש עלות להשתתפות בתוכנית?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>התוכנית ניתנת ללא עלות! כל ההכשרות, הקורסים והליווי המקצועי מסופקים בחינם. אנו מאמינים שכל אחד זכאי להזדמנות שווה להשתלב בעולם ההיי-טק, ולכן התוכנית ממומנת באמצעות תרומות ומתנדבים.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>מתי מתחילה התוכנית?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>המחזור הראשון של התוכנית יחל בספטמבר 2025.</p>
+                            <p>ניתן להגיש מועמדות עד ה-1 במאי 2025.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>מי רשאי להגיש מועמדות לתוכנית?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>בעלי תואר ראשון מכל תחום ממוסד אקדמי מוכר בישראל.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>האם ניתן לפרוש מהתוכנית במהלכה?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ניתן לפרוש מהתוכנית בכל שלב, אך המשתתפים מחויבים להמשיך ללמד בבית הספר בהיקף של 12 שעות שבועיות עד תום שנת הלימודים.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>אילו מקצועות ניתן ללמד בבתי הספר?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ניתן ללמד אחד מהמקצועות הבאים:</p>
+                            <ul>
+                                <li>מתמטיקה</li>
+                                <li>מדעים</li>
+                                <li>אנגלית</li>
+                                <li>מחשבים</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>האם נדרשת תעודת הוראה או ניסיון בהוראה?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>לא, אין צורך בתעודת הוראה או בניסיון קודם.</p>
+                            <p>כחלק מהתוכנית, המשתתפים יקבלו הדרכה וליווי מקצועי בנוגע להוראה בבית הספר.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>מהם שלבי הקבלה לתוכנית?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>תהליך הקבלה כולל את השלבים הבאים:</p>
+                            <ul>
+                                <li>ראיון מקוון בזום</li>
+                                <li>שיחה עם מנהלת בית הספר</li>
+                                <li>העברת שיעור לדוגמה מול תלמידים בבית הספר - אין צורך בניסיון קודם</li>
+                            </ul>
+                            <p>עוברים את כל השלבים? מקומכם בתוכנית מובטח!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>היכן מתקיימת ההוראה?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>המחזור הראשון מתקיים בשיתוף עם בית הספר רבין בהוד השרון.</p>
+                            <p>כל משתתפי התוכנית ילמדו בבית ספר זה בשנה הראשונה.</p>
+                            <p>בהמשך, נפעל להרחבת מעגל בתי הספר המשתתפים בתוכנית.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>מהו גודל המחזור?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>במחזור הראשון ילמדו בין 10 ל-20 משתתפים.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+                    <h2>עדיין יש לך שאלות?</h2>
+                    <p>אנחנו כאן כדי לעזור! צור איתנו קשר ונשמח לענות על כל שאלה.</p>
+                    <a href="#" class="contact-button">צור קשר</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Teach & Tech. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = answer.classList.contains('active');
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('active');
+                });
+                
+                // Toggle current answer
+                if (!isActive) {
+                    answer.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="mobile-menu.js"></script>
+</body>
+</html>
