@@ -1,3 +1,4 @@
+// Mobile menu implementation for Teach & Tech website
 document.addEventListener('DOMContentLoaded', function() {
     // Create mobile menu button
     const nav = document.querySelector('nav');
