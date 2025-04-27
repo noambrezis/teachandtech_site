@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem;
+            z-index: 1002;
         }
 
         .mobile-menu {
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             z-index: 1001;
             padding: 1rem;
             box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
         }
 
         .mobile-menu .nav-links {
@@ -53,6 +55,14 @@ document.addEventListener('DOMContentLoaded', function() {
             padding: 1rem;
             font-size: 1.2rem;
             text-align: right;
+            text-decoration: none;
+            color: var(--text-color);
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .mobile-menu .nav-links a:hover {
+            background-color: var(--light-bg);
         }
 
         .mobile-menu.active {
@@ -72,7 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 
     // Toggle mobile menu
-    mobileMenuButton.addEventListener('click', function() {
+    mobileMenuButton.addEventListener('click', function(e) {
+        e.stopPropagation();
         mobileMenu.classList.toggle('active');
         mobileMenuButton.innerHTML = mobileMenu.classList.contains('active') ? 
             '<i class="fas fa-times"></i>' : 
@@ -80,10 +91,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!mobileMenu.contains(event.target) && 
-            !mobileMenuButton.contains(event.target) && 
-            mobileMenu.classList.contains('active')) {
+    document.addEventListener('click', function(e) {
+        if (mobileMenu.classList.contains('active') && 
+            !mobileMenu.contains(e.target) && 
+            !mobileMenuButton.contains(e.target)) {
             mobileMenu.classList.remove('active');
             mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
         }
@@ -91,9 +102,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close menu when clicking a link
     mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
+            e.stopPropagation();
             mobileMenu.classList.remove('active');
             mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
         });
+    });
+
+    // Prevent clicks inside the menu from closing it
+    mobileMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
     });
 }); 
